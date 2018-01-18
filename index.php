@@ -36,19 +36,25 @@ $f3->route('GET /pets/show/@type', function($f3, $params)
     }
 });
 
-$f3->route('GET /pets/order', function($f3, $params)
+$f3->route('GET /pets/order', function()
 {
-
+    echo 'Form 1';
+    // $template = new Template();
+    // echo $template->render('views/form1.html');
 });
 
-$f3->route('GET /pets/order2', function($f3, $params)
+$f3->route('GET /pets/order2', function()
 {
-
+    echo 'Form 2';
+    // $template = new Template();
+    // echo $template->render('views/form2.html');
 });
 
-$f3->route('GET /pets/results', function($f3, $params)
+$f3->route('POST /pets/results', function()
 {
-
+    echo 'Results';
+    // $template = new Template();
+    // echo $template->render('views/results.html');
 });
 
 $f3->run();
