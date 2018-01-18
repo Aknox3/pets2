@@ -19,7 +19,7 @@ $f3->route('GET /', function()
 $f3->route('GET /pets/show/@type', function($f3, $params)
 {
     $pictures = [
-                    'cat' => 'http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg',
+                    'cat' => 'https://news.nationalgeographic.com/content/dam/news/photos/000/755/75552.ngsversion.1422285553360.adapt.1900.1.jpg',
                     'gazelle' => 'https://www.worldatlas.com/r/w728-h425-c728x425/upload/aa/ec/e9/shutterstock-368215916.jpg'
                 ];
     if(!array_key_exists($params['type'], $pictures))
@@ -34,6 +34,21 @@ $f3->route('GET /pets/show/@type', function($f3, $params)
         $template = new Template();
         echo $template->render('views/show_pet.html');
     }
+});
+
+$f3->route('GET /pets/order', function($f3, $params)
+{
+
+});
+
+$f3->route('GET /pets/order2', function($f3, $params)
+{
+
+});
+
+$f3->route('GET /pets/results', function($f3, $params)
+{
+
 });
 
 $f3->run();
