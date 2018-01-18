@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
@@ -38,23 +40,33 @@ $f3->route('GET /pets/show/@type', function($f3, $params)
 
 $f3->route('GET /pets/order', function()
 {
-    echo 'Form 1';
-    // $template = new Template();
-    // echo $template->render('views/form1.html');
+    $template = new Template();
+    echo $template->render('views/form1.html');
 });
 
-$f3->route('GET /pets/order2', function()
+$f3->route('POST /pets/order2', function()
 {
-    echo 'Form 2';
-    // $template = new Template();
-    // echo $template->render('views/form2.html');
+    $_SESSION['animal'] = $_POST['animal'];
+
+    print_r($_POST);
+    print_r($_SESSION);
+
+    $template = new Template();
+    echo $template->render('views/form2.html');
 });
 
-$f3->route('POST /pets/results', function()
+$f3->route('GET /pets/results', function()
 {
-    echo 'Results';
-    // $template = new Template();
-    // echo $template->render('views/results.html');
+    $_SESSION['color'] = $_POST['color'];
+
+    print_r($_POST);
+    print_r($_SESSION);
+
+    $f3->set('animal', $_SESSION['animal']);
+    $f3->set('color', $_SESSION['color']);
+
+    $template = new Template();
+    echo $template->render('views/results.html');
 });
 
 $f3->run();
