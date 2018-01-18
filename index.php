@@ -32,7 +32,7 @@ $f3->route('GET /pets/show/@type', function($f3, $params)
         $f3->set('type', $pictures[type]);
         $f3->set('alt', $type);
         $template = new Template();
-        $template->render('views/show_pet.html');
+        echo $template->render('views/show_pet.html');
     }
 });
 
