@@ -3,7 +3,11 @@
   "authors": [
     {
       "name":"Ashton Knox",
-      "email":"aknox3@mail.greenrive.edu"
+      "email":"aknox3@mail.greenriver.edu"
+    },
+    {
+      "name":"Jacob Landowski",
+      "email":"jlandowski@mail.greenriver.edu"
     }
   ],
   "require":{
