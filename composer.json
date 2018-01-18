@@ -1,0 +1,12 @@
+{
+  "name":"aknox/328/pets2",
+  "authors": [
+    {
+      "name":"Ashton Knox",
+      "email":"aknox3@mail.greenrive.edu"
+    }
+  ],
+  "require":{
+    "bcosca/fatfree-core":"dev-master"
+  }
+}
