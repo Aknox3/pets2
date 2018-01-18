@@ -38,13 +38,13 @@ $f3->route('GET /pets/show/@type', function($f3, $params)
     }
 });
 
-$f3->route('GET /pets/order', function()
+$f3->route('GET /pets/order', function($f3)
 {
     $template = new Template();
     echo $template->render('views/form1.html');
 });
 
-$f3->route('POST /pets/order2', function()
+$f3->route('POST /pets/order2', function($f3)
 {
     $_SESSION['animal'] = $_POST['animal'];
 
@@ -55,7 +55,7 @@ $f3->route('POST /pets/order2', function()
     echo $template->render('views/form2.html');
 });
 
-$f3->route('GET /pets/results', function()
+$f3->route('GET /pets/results', function($f3)
 {
     $_SESSION['color'] = $_POST['color'];
 
