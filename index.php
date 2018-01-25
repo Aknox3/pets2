@@ -17,7 +17,9 @@ $f3->route('GET /', function()
     $template = new Template();
     echo $template->render('views/home.html');
 });
+$f3->route('GET|POST /new-pet', functions($f3) {
 
+});
 $f3->route('GET /pets/show/@type', function($f3, $params)
 {
     $pictures = [
