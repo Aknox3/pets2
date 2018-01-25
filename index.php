@@ -10,6 +10,7 @@ require_once "vendor/autoload.php";
 $f3 = Base::instance();
 
 $f3->set('DEBUG', 3);
+$f3->set('colors', array('green','blue','pink'));
 
 $f3->route('GET /', function() 
 {
@@ -17,9 +18,12 @@ $f3->route('GET /', function()
     $template = new Template();
     echo $template->render('views/home.html');
 });
-$f3->route('GET|POST /new-pet', functions($f3) {
 
+$f3->route('GET|POST /new-pet', function($f3)
+{
+echo Template::instance()->render('views/order.php');
 });
+
 $f3->route('GET /pets/show/@type', function($f3, $params)
 {
     $pictures = [
@@ -57,7 +61,7 @@ $f3->route('POST /pets/order2', function($f3)
     echo $template->render('views/form2.html');
 });
 
-$f3->route('POST /pets/results', function($f3)
+$f3->route('GET /pets/results', function($f3)
 {
     $_SESSION['color'] = $_POST['color'];
 
