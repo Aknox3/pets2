@@ -12,8 +12,13 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 $f3->set('colors', array('green','blue','pink'));
 
-$f3->route('GET /', function() 
+$f3->route('GET /', function($f3)
 {
+    if(isset($_POST['submit'])){
+        include 'model/validate.php';
+        $color = $_POST['color'];
+        $f3->set('color',$color);
+    }
 
     $template = new Template();
     echo $template->render('views/home.html');
