@@ -18,6 +18,12 @@ $f3->route('GET /', function($f3)
         include 'model/validate.php';
         $color = $_POST['color'];
         $f3->set('color',$color);
+        $f3->set('name',$_POST['name']);
+        $f3->set('type',$_POST['type']);
+        $f3->set('error', $errors);
+        $f3->set('success', $success);
+
+
     }
 
     $template = new Template();
