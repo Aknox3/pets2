@@ -12,10 +12,10 @@
 
     <label>Pet Name  <input type="text" name=name value=""></label><br>
     <label>Pet Color <select name="color">
-            <option value="green">Green</option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
+            <repeat group="{{@colors}}" value="{{@colorOption}}">
+                <option value="{{@colorOption}}">{{@colorOption}}</option>
+
+            </repeat>
         </select></label><br>
 
     <label>Pet Type  <input type="text" name="type" value=""></label><br>
