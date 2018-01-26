@@ -29,7 +29,10 @@
     </check>
     <label>Pet Color <select name="color">
             <repeat group="{{@colors}}" value="{{@colorOption}}">
-                <option value="{{@colorOption}}">{{@colorOption}}</option>
+
+                <option value="{{@colorOption}}">
+                    <check if=""{{@colorOption="=@color"}}">selected</check>
+                    {{@colorOption}}</option>
 
             </repeat>
         </select></label><br>
