@@ -20,3 +20,9 @@ function validString($string)
 {
     return (sizeof($string)>0 && ctype_alpha($string));
 }
+
+$errors =array();
+
+if (!validColor($color)) {
+    $errors['color'] = "Please enter a valid color.";
+}
