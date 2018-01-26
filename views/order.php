@@ -8,6 +8,18 @@
     <title>Document</title>
 </head>
 <body>
+<form method="POST" action="#">
 
+    <label>Pet Name  <input type="text" name=name value=""></label><br>
+    <label>Pet Color <select name="color">
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+        </select></label><br>
+
+    <label>Pet Type  <input type="text" name="type" value=""></label><br>
+    <button type="submit" name="submit">Submit</button>
+</form>
 </body>
 </html>
