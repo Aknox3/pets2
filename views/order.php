@@ -23,7 +23,7 @@
     <check if="{{ @errors['name'] }}">
         <p>{{ @errors['name'] }} </p>
     </check>
-    <label>Pet Name  <input type="text" name=name value=""></label><br>
+    <label>Pet Name  <input type="text" name="name" value=""></label><br>
     <check if="{{ @errors['color'] }}">
         <p>{{ @errors['color'] }} </p>
     </check>
