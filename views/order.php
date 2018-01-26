@@ -10,7 +10,7 @@
 <body>
 <form method="POST" action="#">
 
-    <label>Pet Name  <input type="text" name=name value=""></label><br>
+    <label>Pet Name  <input type="text" name="name" value=""></label><br>
     <label>Pet Color <select name="color">
             <repeat group="{{@colors}}" value="{{@colorOption}}">
                 <option value="{{@colorOption}}">{{@colorOption}}</option>
