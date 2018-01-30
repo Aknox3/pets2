@@ -29,9 +29,9 @@ $f3->route('GET|POST /new-pet', function($f3)
         $type = $_POST['type'];
         $f3->set('color',$color);
         include 'model/validate.php';
-        $f3->set('name',$_POST['name']);
-        $f3->set('type',$_POST['type']);
-        $f3->set('error', $errors);
+        $f3->set('name',$name);
+        $f3->set('type',$type);
+        $f3->set('errors', $errors);
         $f3->set('success', $success);
 
 

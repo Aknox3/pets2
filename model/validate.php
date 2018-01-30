@@ -18,7 +18,14 @@ function validColor($color)
 
 function validString($string)
 {
-    return (sizeof($string)>0 && ctype_alpha($string));
+    echo $string . strlen($string);
+    if (strlen($string)>0 && ctype_alpha($string))
+    {
+        echo "true";
+        return true;
+    }
+    echo "false";
+    return false;
 }
 
 $errors =array();
@@ -36,5 +43,5 @@ if (!validString($type))
 {
     $errors['type'] = "Please enter a valid type.";
 }
-
+print_r($errors);
 $success = (sizeof($errors) == 0);

@@ -16,35 +16,32 @@ ini_set("display_errors", 1);
     <h2>Thank you for your order of a {{ @type }} </h2>
 </check>
 
-<check if="{{ @errors['color'] }}">
-    <p>{{ @errors['color'] }} </p>
-</check>
-
-<check if="{{ @errors['name'] }}">
-    <p>{{ @errors['name'] }} </p>
-</check>
-
-<check if="{{ @errors['type'] }}">
-    <p>{{ @errors['color'] }} </p>
-</check>
-
 <form method="POST" action="#">
 
-    <check if="{{ @errors['name'] }}">
-        <p>{{ @errors['name'] }} </p>
+    <check if="{{ !@success && @submitted }}">
+        <repeat group="{{@errors}}" value="{{@error}}">
+            <p>{{ @error }} </p>
+        </repeat>
     </check>
-    <label>Pet Name  <input type="text" name="name" value=""></label><br>
-    <check if="{{ @errors['color'] }}">
+    <check if="{{ isset(@errors['color']) }}">
         <p>{{ @errors['color'] }} </p>
     </check>
+
+    <check if="{{ isset(@errors['name']) }}">
+        <p>{{ @errors['name'] }} </p>
+    </check>
+
+    <label>Pet Name  <input type="text" name="name" value=""></label><br>
+
     <label>Pet Color <select name="color">
+            <option>--Select--</option>
             <repeat group="{{@colors}}" value="{{@colorOption}}">
                 <option value="{{@colorOption}}">{{@colorOption}}</option>
 
             </repeat>
         </select></label><br>
 
-    <check if="{{ @errors['type'] }}">
+    <check if="{{ isset(@errors['type']) }}">
         <p>{{ @errors['type'] }} </p>
     </check>
     <label>Pet Type  <input type="text" name="type" value="{{@type}}"></label><br>
