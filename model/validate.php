@@ -34,7 +34,7 @@ if (!validString($name))
 
 if (!validString($type))
 {
-    $errors['name'] = "Please enter a valid name.";
+    $errors['type'] = "Please enter a valid type.";
 }
 
 $success = (sizeof($errors) == 0);
