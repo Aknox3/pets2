@@ -1,5 +1,4 @@
 <?php
-    check if="{{ @success }}";
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,10 +28,7 @@
     </check>
     <label>Pet Color <select name="color">
             <repeat group="{{@colors}}" value="{{@colorOption}}">
-
-                <option value="{{@colorOption}}">
-                    <check if=""{{@colorOption="=@color"}}">selected</check>
-                    {{@colorOption}}</option>
+                <option value="{{@colorOption}}">{{@colorOption}}</option>
 
             </repeat>
         </select></label><br>
@@ -40,7 +36,7 @@
     <check if="{{ @errors['type'] }}">
         <p>{{ @errors['type'] }} </p>
     </check>
-    <label>Pet Type  <input type="text" name="type" value=""></label><br>
+    <label>Pet Type  <input type="text" name="type" value="{{@type}}"></label><br>
     <button type="submit" name="submit">Submit</button>
 </form>
 </body>
