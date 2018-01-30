@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,6 +19,15 @@
 <check if="{{ @errors['color'] }}">
     <p>{{ @errors['color'] }} </p>
 </check>
+
+<check if="{{ @errors['name'] }}">
+    <p>{{ @errors['name'] }} </p>
+</check>
+
+<check if="{{ @errors['type'] }}">
+    <p>{{ @errors['color'] }} </p>
+</check>
+
 <form method="POST" action="#">
 
     <check if="{{ @errors['name'] }}">

@@ -26,3 +26,15 @@ $errors =array();
 if (!validColor($color)) {
     $errors['color'] = "Please enter a valid color.";
 }
+
+if (!validString($name))
+{
+    $errors['name'] = "Please enter a valid name.";
+}
+
+if (!validString($type))
+{
+    $errors['name'] = "Please enter a valid name.";
+}
+
+$success = (sizeof($errors) == 0);

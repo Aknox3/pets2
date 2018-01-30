@@ -14,17 +14,7 @@ $f3->set('colors', array('green','blue','pink'));
 
 $f3->route('GET /', function($f3)
 {
-    if(isset($_POST['submit'])){
-        include 'model/validate.php';
-        $color = $_POST['color'];
-        $f3->set('color',$color);
-        $f3->set('name',$_POST['name']);
-        $f3->set('type',$_POST['type']);
-        $f3->set('error', $errors);
-        $f3->set('success', $success);
 
-
-    }
 
     $template = new Template();
     echo $template->render('views/home.html');
@@ -32,6 +22,20 @@ $f3->route('GET /', function($f3)
 
 $f3->route('GET|POST /new-pet', function($f3)
 {
+    if(isset($_POST['submit'])){
+
+        $color = $_POST['color'];
+        $name = $_POST['name'];
+        $type = $_POST['type'];
+        $f3->set('color',$color);
+        include 'model/validate.php';
+        $f3->set('name',$_POST['name']);
+        $f3->set('type',$_POST['type']);
+        $f3->set('error', $errors);
+        $f3->set('success', $success);
+
+
+    }
 echo Template::instance()->render('views/order.php');
 });
 
