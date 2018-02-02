@@ -31,9 +31,13 @@ ini_set("display_errors", 1);
         <p>{{ @errors['name'] }} </p>
     </check>
 
-    <label>Pet Name  <input type="text" name="name" value=""></label><br>
+    <check if="{{ isset(@errors['type']) }}">
+        <p>{{ @errors['type'] }} </p>
+    </check>
 
-    <label>Pet Color <select name="color">
+    <label>Pet Name  <input type="text" name="name" value="{{ @name }}"></label><br>
+
+    <label>Pet Color <select name="color" value="{{ @color }}">
             <option>--Select--</option>
             <repeat group="{{@colors}}" value="{{@colorOption}}">
                 <option value="{{@colorOption}}">{{@colorOption}}</option>
@@ -41,9 +45,7 @@ ini_set("display_errors", 1);
             </repeat>
         </select></label><br>
 
-    <check if="{{ isset(@errors['type']) }}">
-        <p>{{ @errors['type'] }} </p>
-    </check>
+
     <label>Pet Type  <input type="text" name="type" value="{{@type}}"></label><br>
     <button type="submit" name="submit">Submit</button>
 </form>
